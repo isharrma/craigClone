@@ -4,4 +4,3 @@ from .models import Search
 
 
 admin.site.register(Search)
-
