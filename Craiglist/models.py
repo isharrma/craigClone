@@ -7,3 +7,7 @@ class Search(models.Model):
     #auro_now= True saves the time of created automatically,can be used for last searched or last updated.
     def __str__(self):
         return '{}'.format(self.search)
+
+    # Meta class is used to give meta(extra) info about the model/database like ordering i.e order by and verbose is for simple naming
+    class Meta:
+        verbose_name_plural = "Searches"
