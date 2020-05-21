@@ -15,9 +15,23 @@ def new_search(request):
     response = requests.get(final_url)
     data = response.text
     soup =BeautifulSoup(data, features='html.parser')
-    post_titles = soup.find_all('a', {'class':'result-title'})
-    print(post_titles)
+
+    post_listings = soup.find_all('li', {'class':'result-row'})
+    final_posting = []
+
+    for post in post_listings:
+        post_title = post.find(class_ ='result-title').text
+        post_url = post.find('a').get('href')
+        if post.find(class_ = 'result-price'):
+            post_price = post.find(class_ = 'result-price').text
+        else:
+            post_price = "N/A"
+
+        final_posting.append((post_title , post_url , post_price))
+    
+    
     context = {
         'search' : search ,
+        'final_posting' : final_posting, 
     }
     return render(request,"Craiglist/new_search.html" ,context)
