@@ -19,4 +19,4 @@ Craiglist is a great web application but its interface is dull and boring.My cra
 ![](https://user-images.githubusercontent.com/54413011/82926689-3240a280-9f9d-11ea-925c-71a6ba4c3daa.png) 
  
 # Future scope
-Install heroku and host it for better use. 
+Install heroku and host it for better reach.
